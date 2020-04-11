@@ -138,9 +138,9 @@
 	             <div class="input-group">
 	              <label class="label">Nom  Moniteur:</label>
 	                <select class="form-control" th:field="*{Nom_Moniteur}" multiple="multiple">
-					    <option th:each="moniteur : ${listmoniteur}"
+					    <option th:each="moniteur : ${list}"
 					            th:field="*{Nom_Moniteur}"
-					            th:value="${moniteur.id}"
+					            th:value="${moniteur_id}"
 					            th:text="${moniteur.Nom}">nom de moniteur</option>
 					</select>
 				</div>
