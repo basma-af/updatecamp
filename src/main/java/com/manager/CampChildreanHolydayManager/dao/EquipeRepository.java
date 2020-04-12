@@ -10,7 +10,7 @@ import com.manager.CampChildreanHolydayManager.Entites.Equipe;
 
 public interface  EquipeRepository extends JpaRepository<Equipe, Long>{
 	
-	@Query("SELECT new equipe(m.Nom , m.Prenom ,b.Nom , b.Prenom) FROM benificier b JOIN moniteur m ")
+	@Query(value="SELECT m.Nom , m.Prenom  FROM  moniteur m  inner join equipe e on e.moniteur_id = m.id ", nativeQuery = true)
 	
 	    public List<Equipe> getJoinInformation();
 	

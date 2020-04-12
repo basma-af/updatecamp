@@ -50,7 +50,7 @@ public class AController {
 		  ////////////Equipe//////////////
 	  @Autowired
 	    private EquipeService EQservice;
-	  
+	  @Secured(value= {"ROLE_ADMIN","ROLE_Personne"})
 	  // enregistre new personne
 	  @RequestMapping("/Ajouter_equipe")
 	  public String showNewEquipePage(Model model) {
@@ -60,20 +60,20 @@ public class AController {
 	      return "new_equipe";
 	  }
 	  // enregistre  new inscription
-	  @RequestMapping(value = "/save", method = RequestMethod.POST)
+	  @RequestMapping(value = "/saveequipe", method = RequestMethod.POST)
 	  public String save(@ModelAttribute("equipe") Equipe equipe) {
 	      EQservice.save(equipe);
 	       
 	      return "redirect:/Ajouter_equipe";
 	  }
-		
-	    @GetMapping("/Ajouter_equipe")
+
+	   @GetMapping("/Ajouter_equipe")
 	    public String viewHomePagee( Model model) {
 	   List<Equipe> list =EQservice.getJoinInformation();
 	   model.addAttribute("list",list);
 	   return "redirect:/Ajouter_equipe";
 	    }
-	    
+	  
 
 	 
 }
