@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+	
+	<!-- Site Icons -->
+    <link rel="shortcut icon" href="images/m.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Title Page-->
+
+     <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+     <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/styleform.css" th:href="@{/css/styleform.css}" />
+     <link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/form.css" th:href="@{/css/form.css}" />
+<title>Edit fiche medicale</title>
+</head>
+<body>
+<nav>
+  <ul>
+    <li>Personne</li>
+    <li>Moniteur</li>
+    <li>Benificier</li>
+    <li>Fiche medicale</li>
+    <li>Progamme Alimentaire</li>
+  </ul>
+</nav>
+<div class="openNav">
+  <div class="icon"></div>
+</div>
+
+<div class="wrapper">
+           <div class="card card-4">
+                    <div class="card-body">
+                        <h2 class="title" align="center">Edit fiche medicale</h2>
+        
+                       
+                        <form action="#" th:action="@{/saveFicheMedicale}" th:object="${fichemedicale}" method="post">
+           
+            
+ 
+                      <div class="row row-space"> 
+                          <div class="col-2">
+                             <div class="input-group">
+
+                                 <label class="label">ID :</label>
+                                  <input class="input--style-4" type="text" th:field="*{id}"   required>
+                             </div>
+                           </div>
+                       </div>       
+       
+                     <div class="row row-space">
+                           
+	                              <div class="col-2">
+	                                <div class="input-group">
+									      
+									      			<label class="label">Cas :</label>
+                                        
+									          <div class="p-t-10">
+									         		 <label class="radio-container m-r-45">Urgent
+                                                    <input type="radio" checked="checked"  class="radio-container m-r-45" value="Urgent" th:field="*{cas}">
+                                                   <span class="checkmark"></span>
+                                                    </label>
+									                <label class="radio-container m-r-45">Normale
+                                                        <input type="radio" class="radio-container m-r-45" value="Normale" th:field="*{cas}">
+                                                    <span class="checkmark"></span>
+                                                    </label>
+									            </div>
+                                            </div>
+									      
+		   						   </div>
+		   						 
+							     <div class="col-2">
+                                <div class="input-group">
+                                    
+                                    <label class="label">Nom Respensable Medicale: :</label>
+                                    <input class="input--style-4" type="text"  th:field="*{Nom_Respensable_Medicale}"   required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Nom benificier:</label>
+                                    <input class="input--style-4" type="text" name="Nom"th:field="*{Nom_benificier}" required>
+                                </div>
+                            </div>
+                       
+                          <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Prenom benificier :</label>
+                                    <input class="input--style-4" type="text" name="Prenom" th:field="*{Prenom_benificier}" required>
+                                </div>
+                            </div>
+                       </div>
+                      
+                        
+                        <div class="row row-space">
+                      <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Equipe :</label>
+                                    <input class="input--style-4" type="text" name="email" th:field="*{Equipe}"required>
+                                </div>
+                            </div>
+                             <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Moniteur :</label>
+                                    <input class="input--style-4" type="text"   th:field="*{Moniteur}" required>
+                                </div>
+                            </div>
+                        </div>
+               
+                        <div class="row row-space">
+                          
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Decription :</label>
+                                    <textarea id="address"  class="input--style-4" th:field="*{Decription}"   rows="1" cols="40" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                      
+                                    
+                        <div class="p-t-15">
+                           <button type="submit" class="btn btn-info" style="background-color: #c2d82e ">Enregistrer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script th:src="@{/js/menu_vertical.js}"></script>
+
+ 
+</body>
+</html>

@@ -3,21 +3,106 @@
 <head>
 <meta charset="utf-8"/>
 <title>Authentification</title>
+
+<link rel="stylesheet"  type="text/css"   href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css/"   href="css/stile.css"  th:href="@{css/stile.css}"/>
+<style>
+body{
+ 
+	background-image: url("img/IUqcMo.jpg");
+	background-size:cover;
+	font-family: sans-serif;
+  
+}
+img{
+    margin-top: -100px;
+   width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top: 170px;
+    left: calc(50% - 50px);
+    }
+   .loginbox{
+    width: 450px;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.39);
+    margin: auto;
+    border-radius: 1%;
+    display: table;
+    padding: 80px 40px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}  
+ h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #26ffed;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #07ff77;
+    color: #000;
+}
+    
+     
+
+</style>
+
+<img src="img/images.png" class="image">
 </head>
 <body>
-	<div>
+
+	<div class="loginbox" >
 		<form th:action="@{/login}" method="post">
-			<div>
-				<label>Login :</label>
-				<input type="text" name="username"/>
-			</div>
-			<div>
-				<label>Password :</label>
-				<input type="password" name="password"/>
-			</div>
-			<div>
+		 <h1>Login Here</h1>
+				<p>Username</p>
+				<input type="text" name="username" placeholder="Enter Username"/>
+			
+		
+				<p>Password</p>
+				<input type="password" name="password" placeholder="Enter Password"/>
+			
+		
 				<input type="submit" value="Login"/>
-			</div>
+			
 		</form>
 	</div>
 </body>

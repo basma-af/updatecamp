@@ -1,12 +1,12 @@
 package com.manager.CampChildreanHolydayManager.Entites;
 
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Moniteur {
@@ -19,7 +19,7 @@ public class Moniteur {
 	private int Numero_Tel;
 	private String tache;
 	private String Genre;
-	
+	private Set<Equipe> equipe;
 
 
 	public Moniteur() {
@@ -27,8 +27,11 @@ public class Moniteur {
 		// TODO Auto-generated constructor stub
 	}
 
+
+
+
 	public Moniteur(String cIN, String nom, String prenom, String diplome, String email, int numero_Tel, String tache,
-			String genre) {
+			String genre, Set<Equipe> equipe) {
 		super();
 		CIN = cIN;
 		Nom = nom;
@@ -38,7 +41,10 @@ public class Moniteur {
 		Numero_Tel = numero_Tel;
 		this.tache = tache;
 		Genre = genre;
+		this.equipe = equipe;
 	}
+
+
 
 
 	@Id
@@ -118,5 +124,17 @@ public class Moniteur {
 	public void setGenre(String genre) {
 		Genre = genre;
 	}
-	
+
+
+
+
+
+	@OneToMany(mappedBy = "moniteur")
+	    public Set<Equipe> getEquipe() {
+	        return equipe;
+	    }
+
+	    public void setEquipe(Set<Equipe> equipe) {
+	        this.equipe = equipe;
+	    }
 }

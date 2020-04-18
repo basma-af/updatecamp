@@ -1,15 +1,17 @@
 package com.manager.CampChildreanHolydayManager.Entites;
 
 
-import javax.persistence.*;
-import java.util.Set;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.*;
+
 
 @Entity
 public class Benificier {
@@ -26,6 +28,7 @@ public class Benificier {
 	private String Moniteur;
 	private String Genre;
 	private String Lieu;
+	private Set<Equipe> equipe;
 	
 	public  Benificier() {
 		super();
@@ -34,9 +37,12 @@ public class Benificier {
 
 
 
+
+
+
 	public Benificier(String nom, String prenom, String date_Naissance, String tuteur_Nom_Complet, String cIN,
 			String email, String addresse, int numero_Tel, String profession, String moniteur, String genre,
-			String lieu) {
+			String lieu, Set<Equipe> equipe) {
 		super();
 		Nom = nom;
 		Prenom = prenom;
@@ -50,7 +56,12 @@ public class Benificier {
 		Moniteur = moniteur;
 		Genre = genre;
 		Lieu = lieu;
+		this.equipe = equipe;
+		equipe = new HashSet<>();
 	}
+
+
+
 
 
 
@@ -167,6 +178,15 @@ public class Benificier {
 	public void setLieu(String lieu) {
 		Lieu = lieu;
 	}
+
+
 	
-	
+	  @OneToMany(mappedBy = "benificier", cascade = CascadeType.ALL, orphanRemoval = true)
+	    public Set<Equipe>   getEquipe() {
+	        return equipe;
+	    }
+
+	    public void setEquipe(Set<Equipe> equipe) {
+	        this.equipe = equipe;
+	    }
 }

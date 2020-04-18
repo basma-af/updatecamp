@@ -33,7 +33,7 @@
   <ul>
     <li>Personne</li>
     <li>Moniteur</li>
-    <li>Benificier</li>
+    <li>bénéficiaire</li>
     <li>Fiche medicale</li>
     <li>Progamme Alimentaire</li>
   </ul>
@@ -45,7 +45,7 @@
 <div class="wrapper">
            <div class="card card-4">
                     <div class="card-body">
-                        <h2 class="title">Ajouter d'activite</h2>
+                        <h2 class="title">Ajouter une activite</h2>
 
         <form action="#" th:action="@{/saveactivite}" th:object="${activite}"  method="post">
               
@@ -54,14 +54,14 @@
 	                              <div class="col-2">
 	                                <div class="input-group">
 	                                 <label class="label">Type d'activite :</label>
-                                    <input class="input--style-4" type="text" name="Type_Activite" placeholder="Entre le Type d'activite"  th:field="*{Type_Activite}"  required>
+                                    <input class="input--style-4" type="text" name="Type_Activite" placeholder="Entrez le Type d'activite"  th:field="*{Type_Activite}"  required>
 	                                </div>
                                   </div>
 								<div class="col-2">
                                   <div class="input-group">
                                     
                                     <label class="label">Nom d'activite :</label>
-                                    <input class="input--style-4" type="text" th:field="*{Nom_Activite}" placeholder="Entre le Nom d'activite"  required>
+                                    <input class="input--style-4" type="text" th:field="*{Nom_Activite}" placeholder="Entrez le Nom d'activite"  required>
                                   </div>
                               </div>      
 		   				</div>
@@ -70,13 +70,13 @@
 	                              <div class="col-2">
 	                                <div class="input-group">
 	                                 <label class="label">Outils :</label>
-                                    <input class="input--style-4" type="text" name="Type_Activite" placeholder="Entre l'outils"  th:field="*{Outils}"  required>
+                                    <input class="input--style-4" type="text" name="Type_Activite" placeholder="Entrez l'outils"  th:field="*{Outils}"  required>
 	                                </div>
                                   </div>
 								<div class="col-2">
                                   <div class="input-group">
                                     
-                                    <label class="label">Nombre de Participants :</label>
+                                    <label class="label">Nombre des Participants :</label>
                                     <input class="input--style-4" type="number" th:field="*{nombre_Participants}" placeholder="0"  required>
                                   </div>
                               </div>      
@@ -86,14 +86,14 @@
 	                              <div class="col-2">
 	                                <div class="input-group">
 	                                 <label class="label">Objectif :</label>
-                                    <input class="input--style-4" type="text" name="Type_Activite" placeholder="Entre l'objectif d'activite" th:field="*{Objectif}"  required>
+                                    <input class="input--style-4" type="text" name="Type_Activite" placeholder="Entrez l'objectif d'activite" th:field="*{Objectif}"  required>
 	                                </div>
                                   </div>
 								<div class="col-2">
                                   <div class="input-group">
                                     
                                     <label class="label">Categorie Cible :</label>
-                                    <input class="input--style-4" type="text" th:field="*{Categorie_Cible}" placeholder="Entre le numero de CIN"  required>
+                                    <input class="input--style-4" type="text" th:field="*{Categorie_Cible}" placeholder="Entrez le numero du CIN"  required>
                                   </div>
                               </div>      
 		   				</div>
@@ -110,7 +110,7 @@
                  <div class="p-t-15">
                     <button type="submit" class="btn btn-info" style="background-color: #c2d82e" >Enregistrer</button>
                  </div>
-                   <a href="/affiche_activite">liste de activite </a>
+                   <a href="/affiche_activite">liste des activites </a>
                         <br />
                     <a href="/connexion" class="hvr-underline-reveal">Connexion</a>
          </form>

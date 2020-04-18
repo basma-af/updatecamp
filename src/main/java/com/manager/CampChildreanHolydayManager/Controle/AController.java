@@ -20,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.manager.CampChildreanHolydayManager.Entites.Equipe;
 import com.manager.CampChildreanHolydayManager.Entites.Personne;
-import com.manager.CampChildreanHolydayManager.service.EquipeService;
+//import com.manager.CampChildreanHolydayManager.service.EquipeService;
 import com.manager.CampChildreanHolydayManager.service.PersonneService;
 @Controller
 public class AController {
@@ -48,7 +48,7 @@ public class AController {
 		  return "connexion"; }
 	 
 		  ////////////Equipe//////////////
-	  @Autowired
+	/*  @Autowired
 	    private EquipeService EQservice;
 	  @Secured(value= {"ROLE_ADMIN","ROLE_Personne"})
 	  // enregistre new personne
@@ -72,7 +72,7 @@ public class AController {
 	   List<Equipe> list =EQservice.getJoinInformation();
 	   model.addAttribute("list",list);
 	   return "redirect:/Ajouter_equipe";
-	    }
+	    }*/
 	  
 
 	 

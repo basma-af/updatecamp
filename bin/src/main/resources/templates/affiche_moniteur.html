@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- Required meta tags-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/m.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+ <!-- Title Page-->
+    <title>BasmaRa9i9a</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="css/styleform.css" rel="stylesheet" media="all">
+<style type="text/css">
+    body {
+        color: #404E67;
+        background: #F5F7FA;
+		font-family: 'Open Sans', sans-serif;
+	}
+	.table-wrapper {
+		width: 1000px ;
+		margin: 101px ;o;
+        background: #fff;
+        padding: 20px;	
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+    }
+    .table-title h2 {
+        margin: 6px 0 0;
+        font-size: 22px;
+    }
+    .table-title .add-new {
+        float: right;
+		height: 30px;
+		font-weight: bold;
+		font-size: 12px;
+		text-shadow: none;
+		min-width: 100px;
+		border-radius: 50px;
+		line-height: 13px;
+    }
+	.table-title .add-new i {
+		margin-right: 4px;
+	}
+    table.table {
+        table-layout: auto;
+    }
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
+    }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    table.table th:last-child {
+        width: 100px;
+    }
+    table.table td a {
+		cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+		min-width: 24px;
+    }    
+	table.table td a.add {
+        color: #27C46B;
+    }
+    table.table td a.edit {
+        color: #FFC107;
+    }
+    table.table td a.delete {
+        color: #E34724;
+    }
+    table.table td i {
+        font-size: 19px;
+    }
+	table.table td a.add i {
+        font-size: 24px;
+    	margin-right: -1px;
+        position: relative;
+        top: 3px;
+    }    
+    table.table .form-control {
+        height: 32px;
+        line-height: 32px;
+        box-shadow: none;
+        border-radius: 2px;
+    }
+	table.table .form-control.error {
+		border-color: #f50000;
+	}
+	table.table td .add {
+		display: none;
+	}
+</style>
+        
+
+<title>La liste de moniteur inscrit</title>
+</head>
+<body>
+<nav>
+  <ul>
+    <li>Personne</li>
+    <li>Moniteur</li>
+    <li>Benificier</li>
+    <li>Fiche medicale</li>
+    <li>Progamme Alimentaire</li>
+  </ul>
+</nav>
+<div class="openNav">
+  <div class="icon"></div>
+</div>
+
+<div class="wrapper">
+ <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>La liste de<b> moniteur </b>inscript</h2></div>
+                    <div class="col-sm-4">
+			   		
+			    		<a href="/moniteur"> <button type="button" class="btn btn-info add-new"  ><i class="fa fa-plus" ></i> Ajouter </button></a>
+			   		</div>
+				</div>
+			</div>
+	         
+	    
+                <a href="/connexion" class="hvr-underline-reveal">Connexion</a>
+                <h3><a href="/download/Moniteur.csv" style="color: #c2d82e "><i class="fa fa-file-excel-o" aria-hidden="true"></i></a></h3>
+		<form  th:object="${moniteur}" th:action="@{/searchmoniteur}" method="get" >
+			 <input type="text" placeholder="Search for ...."  th:name="keyword"  required /> &nbsp;
+		     <input type="submit"  value="Search"  />
+		 </form>
+	       		
+	     <table class="table table-bordered">
+	        <thead>
+	            <tr>
+	                <th>ID</th>
+	                <th>Genre</th>
+	                <th>CIN</th>
+	                <th>Nom</th>
+	                <th>Prenom</th>
+	                <th>Diplome</th>
+	                <th>Email</th>
+	                <th>Numero_Tel</th>
+	                <th>Tache</th>
+	                <th>Action</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	             <tr th:each="moniteur : ${listMoniteur}">
+	                <td th:text="${moniteur.id}"> ID</td>
+	                <td th:text="${moniteur.Genre}">Genre</td>
+	                <td th:text="${moniteur.CIN}">CIN</td>
+	                <td th:text="${moniteur.Nom}">Nom</td>
+	                <td th:text="${moniteur.Prenom}">Prenom</td>
+	                <td th:text="${moniteur.Diplome}">Diplome</td>
+	              	<td th:text="${moniteur.email}">Email</td>
+	                <td th:text="${moniteur.Numero_Tel}">Numero_Tel</td>
+	                <td th:text="${moniteur.tache}">Tache</td>
+					<td>
+<a  class="edit" title="Edit" data-toggle="tooltip" th:href="@{'/moniteur/edit/' + ${moniteur.id}}" style="color: #c2d82e "><i class="material-icons">&#xE254;</i></a>
+<a class="delete"  onclick="return confDelete()"  title="Delete" data-toggle="tooltip" th:href="@{'/moniteur/delete/' + ${moniteur.id}}" style="color: #01bacf "><i class="material-icons" >&#xE872;</i></a>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+ </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/menu_vertical.js"></script>  
+	    <script >
+ 
+     function confDelete() {
+    	    if (confirm("etes vous sur de vouloir supprimer?") == true) {
+    	        alert("Suppression en cours!");
+    	        return true;
+    	    } else {
+    	        alert("Cancel de supprimer!");
+    	        return false;
+    	    }
+    	}
+ 
+      </script>
+</body>
+</html>
