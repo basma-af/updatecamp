@@ -26,14 +26,14 @@
     <!-- Main CSS-->
       <link href="css/form.css" rel="stylesheet" media="all">
 	<link href="css/styleform.css" rel="stylesheet" media="all">
-<title>Ajouter Benificier</title>
+<title>Ajouter  un Bénéficiaire</title>
 </head>
 <body>
 	<nav>
   <ul>
     <li>Personne</li>
     <li>Moniteur</li>
-    <li>Benificier</li>
+    <li>beneficiaire</li>
     <li>Fiche medicale</li>
     <li>Progamme Alimentaire</li>
   </ul>
@@ -45,7 +45,7 @@
 <div class="wrapper">
            <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title" align="center">Creation Nouvelle benificier</h2>
+                    <h2 class="title" align="center">Creation d'un Nouveau beneficiaire</h2>
            <form action="#" th:action="@{/save2}" th:object="${benificier}" method="post">
                                <div class="row row-space">
                            
@@ -59,7 +59,7 @@
                                                     <input type="radio" checked="checked"  class="radio-container m-r-45" value="Masculin" th:field="*{Genre}">
                                                    <span class="checkmark"></span>
                                                     </label>
-									                <label class="radio-container m-r-45">Femelle
+									                <label class="radio-container m-r-45">Feminin
                                                         <input type="radio" class="radio-container m-r-45" value="Femelle" th:field="*{Genre}">
                                                     <span class="checkmark"></span>
                                                     </label>
@@ -85,15 +85,15 @@
                          <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Nom Benificier:</label>
-                                    <input class="input--style-4" type="text" name="Nom"th:field="*{Nom}"placeholder="Entre le nom de benificier" required>
+                                    <label class="label">Nom beneficiaire:</label>
+                                    <input class="input--style-4" type="text" name="Nom"th:field="*{Nom}"placeholder="Entre le nom de beneficiaire" required>
                                 </div>
                             </div>
                        
                           <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Prenom Benificier:</label>
-                                    <input class="input--style-4" type="text" name="Prenom" th:field="*{Prenom}" placeholder="Entre le prenom de benificier"required>
+                                    <label class="label">Prenom beneficiaire:</label>
+                                    <input class="input--style-4" type="text" name="Prenom" th:field="*{Prenom}" placeholder="Entre le prenom de beneficiaire"required>
                                 </div>
                             </div>
                        </div>
@@ -161,7 +161,7 @@
                         <div class="p-t-15">
                            <button type="submit" class="btn btn-info" style="background-color: #c2d82e ">Enregistrer</button>
                         </div>
-                          <a href="/affiche_Benificier">liste de benificier inscrit</a>
+                          <a href="/affiche_Benificier">liste des beneficiaire inscrits</a>
                         <br />
                       <a href="/connexion" class="hvr-underline-reveal">Connexion</a>
                     </form>

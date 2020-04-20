@@ -714,6 +714,7 @@ public class AppController {
 	  model.addAttribute("Result", Result); }
 	 
 	  return "search_moniteur";   }
-}
+
 	 
 	  				
+}

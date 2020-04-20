@@ -33,7 +33,7 @@
   <ul>
     <li>Personne</li>
     <li>Moniteur</li>
-    <li>Benificier</li>
+    <li>Beneficiaire</li>
     <li>Fiche medicale</li>
     <li>Progamme Alimentaire</li>
   </ul>
@@ -46,7 +46,7 @@
     
          <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title" align="center">Creation Nouvelle Moniteur</h2>
+                    <h2 class="title" align="center">Creation d'un Nouveau Moniteur</h2>
                    
                     <form action="#" th:action="@{/savemoniteur}" th:object="${moniteur}"method="post">
             
@@ -62,7 +62,7 @@
                                                     <input type="radio" checked="checked"  class="radio-container m-r-45" value="Masculin" th:field="*{Genre}">
                                                    <span class="checkmark"></span>
                                                     </label>
-									                <label class="radio-container m-r-45">Femelle
+									                <label class="radio-container m-r-45">Feminin
                                                         <input type="radio" class="radio-container m-r-45" value="Femelle" th:field="*{Genre}">
                                                     <span class="checkmark"></span>
                                                     </label>

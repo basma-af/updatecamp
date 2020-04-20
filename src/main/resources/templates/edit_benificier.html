@@ -35,7 +35,7 @@
   <ul>
     <li>Personne</li>
     <li>Moniteur</li>
-    <li>Benificier</li>
+    <li>Beneficiaire</li>
     <li>Fiche medicale</li>
     <li>Progamme Alimentaire</li>
   </ul>
@@ -47,7 +47,7 @@
 <div class="wrapper">
            <div class="card card-4">
                     <div class="card-body">
-                        <h2 class="title" align="center">Edit benificier</h2>
+                        <h2 class="title" align="center">Edit beneficiaire</h2>
            <form action="#" th:action="@{/save2}" th:object="${benificier}" method="post">
              <div class="row row-space"> 
                           <div class="col-2">
@@ -70,7 +70,7 @@
                                                     <input type="radio" checked="checked"  class="radio-container m-r-45" value="Masculin" th:field="*{Genre}">
                                                    <span class="checkmark"></span>
                                                     </label>
-									                <label class="radio-container m-r-45">Femelle
+									                <label class="radio-container m-r-45">Feminin
                                                         <input type="radio" class="radio-container m-r-45" value="Femelle" th:field="*{Genre}">
                                                     <span class="checkmark"></span>
                                                     </label>
@@ -96,14 +96,14 @@
                          <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Nom Benificier:</label>
+                                    <label class="label">Nom Beneficiaire:</label>
                                     <input class="input--style-4" type="text" name="Nom" th:field="*{Nom}" required>
                                 </div>
                             </div>
                        
                           <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Prenom Benificier:</label>
+                                    <label class="label">Prenom bénéficiaire:</label>
                                     <input class="input--style-4" type="text" name="Prenom" th:field="*{Prenom}" required>
                                 </div>
                             </div>
